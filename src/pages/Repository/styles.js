@@ -1,4 +1,4 @@
-import styled, { keyframes, css } from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 const rotate = keyframes`
   from {
@@ -17,6 +17,16 @@ export const Loading = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 200px;
+`;
+
+export const GoBack = styled.div`
+  svg {
+    padding: 8px;
+    background-color: #f0d78c;
+    border-radius: 50%;
+    color: #fff;
+    box-shadow: inset 0px 0px 5px rgba(0, 0, 0, 0.05);
+  }
 `;
 
 export const Owner = styled.header`
@@ -50,10 +60,25 @@ export const Owner = styled.header`
 `;
 
 export const IssueList = styled.ul`
-  padding-top: 30px;
-  margin-top: 30px;
+  margin-top: 15px;
   border-top: 1px solid #eee;
   list-style: none;
+
+  p.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 0px 10px 0px;
+    margin: 20px 0px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #eee;
+    color: #64c4ed;
+
+    width: 100%;
+  }
 
   li {
     display: flex;
@@ -100,6 +125,48 @@ export const IssueList = styled.ul`
         border-radius: 2px;
         padding: 2px 4px;
       }
+    }
+  }
+`;
+
+export const IssueFilter = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-bottom: 15px;
+
+  button {
+    background: #64c4ed;
+    color: #fcfafa;
+    border-radius: 4px;
+    outline: 0;
+    border: 0;
+    padding: 8px;
+    margin: 0px 10px;
+
+    &:nth-child(${props => props.active + 1}) {
+      background: #4f81c7;
+      color: #fff;
+    }
+  }
+`;
+
+export const PageActions = styled.div`
+  padding-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+
+  button {
+    transition: opacity 0.25s ease-out;
+    border-radius: 4px;
+    outline: 0;
+    border: 0;
+    padding: 5px;
+
+    &:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
     }
   }
 `;
